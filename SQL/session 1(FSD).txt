@@ -1,0 +1,48 @@
+mysql>create database sushma;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> create table students(id INT,name VARCHAR(50),age INT, marks INT, department VARCHAR(60));
+ERROR 1046 (3D000): No database selected
+mysql> use sushma;
+Database changed
+mysql>  create table students(id INT,name VARCHAR(50),age INT, marks INT, department VARCHAR(60));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> insert into students(id,name,age,marks,department)values(10,"susmitha",20,100,"CSE");
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into students(id,name,age,marks,department)values(11,"jayasree",21,90,"CSE(AIML)");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into students(id,name,age,marks,department)values(12,"joe",22,95,"CSE(AIDS)");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select*from students;
++------+----------+------+-------+------------+
+| id   | name     | age  | marks | department |
++------+----------+------+-------+------------+
+|   10 | susmitha |   20 |   100 | CSE        |
+|   11 | jayasree |   21 |    90 | CSE(AIML)  |
+|   12 | joe      |   22 |    95 | CSE(AIDS)  |
++------+----------+------+-------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select*from students where marks > 90;
++------+----------+------+-------+------------+
+| id   | name     | age  | marks | department |
++------+----------+------+-------+------------+
+|   10 | susmitha |   20 |   100 | CSE        |
+|   12 | joe      |   22 |    95 | CSE(AIDS)  |
++------+----------+------+-------+------------+
+2 rows in set (0.02 sec)
+
+mysql> select*from students ORDER BY marks ASC;
++------+----------+------+-------+------------+
+| id   | name     | age  | marks | department |
++------+----------+------+-------+------------+
+|   11 | jayasree |   21 |    90 | CSE(AIML)  |
+|   12 | joe      |   22 |    95 | CSE(AIDS)  |
+|   10 | susmitha |   20 |   100 | CSE        |
++------+----------+------+-------+------------+
+3 rows in set (0.00 sec)
+
